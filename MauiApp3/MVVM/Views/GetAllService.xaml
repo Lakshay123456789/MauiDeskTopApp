@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.MVVM.Views.GetAllService"
+             Title="GetAllService">
+    <StackLayout Padding="10">
+        <Button Text ="Add Service" Clicked="AddService_Clicked" WidthRequest="150" HorizontalOptions="Start" VerticalOptions="Start"></Button>
+        <CollectionView x:Name="Service_Collection">
+        <CollectionView.Header>
+            <Grid BackgroundColor="#2196F3" >
+            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Service Title" FontAttributes="Bold" TextColor="White"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Service Description" FontAttributes="Bold" TextColor="White" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Price" FontAttributes="Bold" TextColor="White" />
+                <Label Grid.Row="0" Grid.Column="3" Text="Service Type ID" FontAttributes="Bold" TextColor="White"/>
+            </Grid>
+        </CollectionView.Header>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Text="{Binding Title}"  BackgroundColor="AntiqueWhite" />
+                    <Label Grid.Column="1" Text="{Binding Description}" BackgroundColor="AntiqueWhite" />
+                    <Label Grid.Column="2" Text="{Binding Price, StringFormat='{0:C}'}" BackgroundColor="AntiqueWhite"/>
+                    <Label Grid.Column="3" Text="{Binding ServieTypeId}" BackgroundColor="AntiqueWhite"/>
+
+                    <Button Grid.Column="4" Text="Delete" Clicked="Delete_Clicked" CommandParameter="{Binding Id}" BackgroundColor="Red"></Button>
+                    <Button Grid.Column="5" Text="Edit"   Clicked="Edited_Clicked" CommandParameter="{Binding Id}" BackgroundColor="Green"></Button>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp3"
+    xmlns:views="clr-namespace:MauiApp3.MVVM.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:LoginView}"
+        Route="LoginView" />
+
+    <ShellContent
+     Title="Home"
+     ContentTemplate="{DataTemplate views:GetAllService}"
+     Route="GetAllService" />
+    <ShellContent
+ Title="Home"
+ ContentTemplate="{DataTemplate views:GetOnlyService}"
+ Route="GetOnlyService" />
+    <ShellContent
+Title="Home"
+ContentTemplate="{DataTemplate views:AddNewServiceView}"
+Route="AddNewServiceView" />
+
+</Shell>

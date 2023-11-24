@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.MVVM.Views.GetOnlyService"
+             Title="Service" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Define your styles here -->
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="BackgroundColor" Value="Blue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="IdEntry" Text="{Binding Id}" WidthRequest="300"/>
+        <Label  Text="Service Title" WidthRequest="300"/>
+        <Entry x:Name="ServiceTitle" Text="{Binding Title}" WidthRequest="300"/>
+        <Label Text="Service Description" WidthRequest="300"/>
+        <Entry x:Name="ServiceDescription" Text="{Binding Description}" WidthRequest="300" />
+        <Label Text="Service Price" WidthRequest="300" />
+        <Entry x:Name="ServicePrice"  Text="{Binding Price}" WidthRequest="300"/>
+        <Label Text="Service Type Id" WidthRequest="300"/>
+        <Entry x:Name="ServiceId"  Text="{Binding ServieTypeId}" WidthRequest="300"/>
+        <Button Text="Update" Clicked="OnEditClicked" WidthRequest="100" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.MVVM.Views.LoginView"
+             Title="LoginView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="DarkSlateGray" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="Margin" Value="0,5,0,5" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="DodgerBlue" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Login Page"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+            <Label Text="UserName" WidthRequest="200" />
+            <Entry Placeholder="Enter UserName" Text="{Binding LoginModel.UserName}" />
+            <Label Text="Password" WidthRequest="200" />
+            <Entry Placeholder="Enter Password" Text="{Binding LoginModel.Password}" IsPassword="True" />
+            <Button Text="Login" Command="{Binding LoginCommand}" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
